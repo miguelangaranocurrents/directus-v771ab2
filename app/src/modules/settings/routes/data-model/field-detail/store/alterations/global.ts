@@ -88,17 +88,3 @@ export function resetRelations(updates: StateUpdates) {
 	updates.relations.o2m = undefined;
 }
 
-export function switchInterfaceAndDisplay(updates: StateUpdates) {
-	let targetInterface = undefined;
-
-	if (updates.localType === 'files') {
-		targetInterface = 'files';
-	} else if (updates.localType === 'file') {
-		targetInterface = 'file';
-	}
-
-	set(updates, 'field.meta.interface', targetInterface);
-	set(updates, 'field.meta.options', undefined);
-	set(updates, 'field.meta.display', undefined);
-	set(updates, 'field.meta.display_options', undefined);
-}

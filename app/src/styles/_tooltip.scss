@@ -44,3 +44,8 @@
 		fill: var(--tooltip-background-color);
 	}
 }
+
+// The popper wrapper reka-ui puts around the content must not swallow clicks aimed at elements below it
+[data-reka-popper-content-wrapper]:has(> .tooltip) {
+	pointer-events: none;
+}
